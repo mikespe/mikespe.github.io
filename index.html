@@ -1,7 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+  @media (min-width: 800px) {
+    .carousel-item {
+      height:22rem !important;
+    }
+  }
 
+    @media (min-width: 991px) {
+    .featurette-heading {
+      margin-top:0px !important;
+    }
+  }
+  @media (max-width: 800px) {
+    .carousel-item {
+      height:29rem !important;
+    }
+  }
+
+.grow img{
+transition: 1s ease;
+}
+
+.grow img:hover{
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+}
+
+</style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Speranza Web Services helps create and manage websites">
@@ -53,7 +82,7 @@
             <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h1>Front-end Web Development Services</h1>
+                <h1>Web Development Services</h1>
                 <p>HTML, CSS, Javscript, PHP, Python, Content Management, SEO Optimization</p>
                 <p><a class="btn btn-lg btn-primary" href="mailto:speranzawebservices@gmail.com" role="button">Email an Inquiry</a></p>
               </div>
@@ -72,8 +101,8 @@
             <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
-                <h1>Past Projects</h1>
-                <p>RCI.com, hayward-pools.com. hgrantdesigns.com, Calorie Calculator, Neighborhood Map, Bookshelf, Frogger</p>
+                <h1>Past Projects & Experience</h1>
+                <p>RCI.com, hayward-pools.com. hgrantdesigns.com, Calorie Calculator, Neighborhood Map, Reactjs Bookshelf, Nutrition Lookup, Weight Log</p>
                 <p><a class="btn btn-lg btn-primary" href="www.github.com/mikespe" role="button">Browse my github</a></p>
               </div>
             </div>
@@ -90,13 +119,9 @@
       </div>
 
 
-      <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container marketing">
 
-        <!-- Three columns of text below the carousel -->
         <div class="row text-center">
           <div class="col-lg-4">
             <h2>Landing Pages</h2>
@@ -109,23 +134,23 @@
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <h2>Digital Marketing Consultation</h2>
-            <p>Professional Experience in several ecommerce and digital marketing departments. I know the range of technologies and tools you need to be getting started with and using to get your digital presence from 0 to hero. These include a website, social media, brand, copywriting, seo, sem, tracking and analytics</p>
+            <p>Professional Experience in several ecommerce and digital marketing teams. I know the range of technologies and tools you need to go from 0 to hero. These mostly include a website, social media, brand, copywriting, seo, sem, tracking and analytics</p>
           </div><!-- /.col-lg-4 -->
 
         </div><!-- /.row -->
 
 
-        <!-- START THE FEATURETTES -->
-
         <hr class="featurette-divider">
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">Weight Loss App</h2>
+            <p class="lead">Created a Weight loss app using HTML, Bootstrap, jquery and php. Consists of Calorie Calculator, Weight/Calorie log and a Nutrition search feature. Next challenge is to implement a user system and host it online so more than just one person can use it</p>
           </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1700e25377f%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1700e25377f%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+          <div class="col-md-5 grow">
+            <a href="https://github.com/mikespe/calcalc" target="_blank">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px;" src="imgs/calories-screen.png" data-holder-rendered="true">
+          </a>
           </div>
         </div>
 
@@ -133,11 +158,13 @@
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">Neighborhood Map </h2>
+            <p class="lead">A Neighborhood map using HTML, CSS, js and google maps api. Search functionality, clickable markers with expandable details, searchable locations to add markers to map.</p>
           </div>
-          <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1700e25378b%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1700e25378b%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 500px; height: 500px;">
+          <div class="col-md-5 order-md-1 grow">
+            <a href="https://github.com/mikespe/neighborhood-map" target="_blank">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="imgs/neighborhoodmap.png" data-holder-rendered="true" style="width: 500px;">
+          </a>
           </div>
         </div>
 
@@ -145,31 +172,17 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">My Reads App</h2>
+            <p class="lead">Bookshelf app with a read, want to read, and already read section. Created using Reactjs and the goodreads api</p>
           </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1700e253790%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1700e253790%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 500px; height: 500px;">
+          <div class="col-md-5 grow">
+            <a href="https://github.com/mikespe/myreads" target="_blank">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="imgs/myreads-screen.png" data-holder-rendered="true" style="width: 500px;">
+          </a>
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <!-- /END THE FEATURETTES -->
 
       </div><!-- /.container -->
 
-
-      <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>© 2017-2018 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
-    </main>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>
+    </main></body></html>

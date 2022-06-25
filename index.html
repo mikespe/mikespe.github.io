@@ -46,16 +46,23 @@
     }
   }
 
-.grow img{
-transition: 1s ease;
+    .grow{
+        animation-duration: 1s;
+    }
+    
+    .grow img:hover {
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
 }
 
-.grow img:hover{
--webkit-transform: scale(1.2);
--ms-transform: scale(1.2);
-transform: scale(1.2);
-transition: 1s ease;
-}
+    @keyframes bounce-1 {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+        }
+        
   
   a {
   color: white !important;

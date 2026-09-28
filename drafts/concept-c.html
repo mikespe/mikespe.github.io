@@ -11,13 +11,13 @@
     ========================================
     To update prices, search for "PRICING:" in this file and edit the values in the pricing boxes.
     
-    Current prices:
-    - AEM 20-hour block: From $2,700
-    - AEM Monthly retainer (20 hrs): From $2,500
-    - AEM Monthly retainer (40 hrs): From $4,800
-    - Accessibility Audit (up to 5 pages): From $1,500
-    - Accessibility Remediation package: From $2,500
-    - Audit + Remediation bundle: From $3,750
+    First-engagement prices (applies to first project with a new client):
+    - AEM 20-hour block: $2,700 (standard $3,200)
+    - AEM Monthly retainer (20 hrs): $2,500 (standard $3,000)
+    - AEM Monthly retainer (40 hrs): $4,800 (standard $5,600)
+    - Accessibility Audit (up to 5 pages): $1,500 (standard $1,800)
+    - Accessibility Remediation package: $2,500 (standard $3,000)
+    - Audit + Remediation bundle: $3,750 (standard $4,500)
     - Additional remediation hours: $125/hr
     ========================================
     -->
@@ -398,6 +398,13 @@
             font-weight: 700;
             color: var(--accent);
             font-family: 'Lora', serif;
+            margin-right: 0.625rem;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1rem;
         }
         
         .note {
@@ -714,21 +721,39 @@
                             <li>SEO and analytics setup: metadata, headings, alt text, structured data, data-layer/analytics tagging</li>
                         </ul>
                         
+                        <div style="background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: white; padding: 0.875rem 1.25rem; border-radius: 8px; font-size: 0.9375rem; font-weight: 600; margin: 1.75rem 0; text-align: center;">
+                            First engagement
+                        </div>
+                        
                         <div class="pricing-box">
                             <h4>How it's priced:</h4>
                             <div class="price-item">
                                 <span>20-hour block</span>
-                                <span class="price-current">From $2,700</span>
+                                <span>
+                                    <span class="price-current">$2,700</span>
+                                    <span class="price-original">$3,200</span>
+                                </span>
                             </div>
                             <div class="price-item">
                                 <span>Monthly retainer (20 hrs)</span>
-                                <span class="price-current">From $2,500</span>
+                                <span>
+                                    <span class="price-current">$2,500</span>
+                                    <span class="price-original">$3,000</span>
+                                </span>
                             </div>
                             <div class="price-item">
                                 <span>Monthly retainer (40 hrs)</span>
-                                <span class="price-current">From $4,800</span>
+                                <span>
+                                    <span class="price-current">$4,800</span>
+                                    <span class="price-original">$5,600</span>
+                                </span>
                             </div>
-                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 1rem;">Fixed-scope projects (migrations, page refreshes) quoted after a short discovery call.</p>
+                            <p style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: 1rem; font-style: italic;">First-engagement rates apply to your first project with me.</p>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.5rem;">Fixed-scope projects (migrations, page refreshes) quoted after a short discovery call.</p>
+                        </div>
+                        
+                        <div style="background: var(--bg-white); border: 2px solid var(--accent); border-radius: 8px; padding: 1.125rem 1.5rem; margin: 1.75rem 0; font-size: 0.9375rem; color: var(--text-primary); font-weight: 600; text-align: center;">
+                            ✓ If the first 5 hours don't meet your bar, you don't pay for them.
                         </div>
                         
                         <a href="#contact" class="btn btn-accent" style="display: block; text-align: center; margin-top: 1.75rem;">Talk about your AEM site →</a>
@@ -746,21 +771,39 @@
                             <li>A 45-minute walkthrough call with your team</li>
                         </ul>
                         
+                        <div style="background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: white; padding: 0.875rem 1.25rem; border-radius: 8px; font-size: 0.9375rem; font-weight: 600; margin: 1.75rem 0; text-align: center;">
+                            First engagement
+                        </div>
+                        
                         <div class="pricing-box">
                             <h4>Pricing:</h4>
                             <div class="price-item">
                                 <span>Audit (up to 5 pages)</span>
-                                <span class="price-current">From $1,500</span>
+                                <span>
+                                    <span class="price-current">$1,500</span>
+                                    <span class="price-original">$1,800</span>
+                                </span>
                             </div>
                             <div class="price-item">
                                 <span>Remediation package</span>
-                                <span class="price-current">From $2,500</span>
+                                <span>
+                                    <span class="price-current">$2,500</span>
+                                    <span class="price-original">$3,000</span>
+                                </span>
                             </div>
                             <div class="price-item">
                                 <span>Audit + Remediation bundle</span>
-                                <span class="price-current">From $3,750</span>
+                                <span>
+                                    <span class="price-current">$3,750</span>
+                                    <span class="price-original">$4,500</span>
+                                </span>
                             </div>
-                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 1rem;">Remediation includes up to 20 hours of fixes plus retest; additional hours $125/hr. Larger scopes quoted.</p>
+                            <p style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: 1rem; font-style: italic;">First-engagement rates apply to your first project with me.</p>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.5rem;">Remediation includes up to 20 hours of fixes plus retest; additional hours $125/hr. Larger scopes quoted.</p>
+                        </div>
+                        
+                        <div style="background: var(--bg-white); border: 2px solid var(--accent); border-radius: 8px; padding: 1.125rem 1.5rem; margin: 1.75rem 0; font-size: 0.9375rem; color: var(--text-primary); font-weight: 600; text-align: center;">
+                            ✓ If the first 5 hours don't meet your bar, you don't pay for them.
                         </div>
                         
                         <div class="note">
@@ -769,6 +812,53 @@
                         
                         <a href="#contact" class="btn btn-accent" style="display: block; text-align: center; margin-top: 1.75rem;">Get an accessibility audit →</a>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recent work</h2>
+                    <p>A few examples from enterprise roles. Client details are kept general.</p>
+                </div>
+                <div style="max-width: 840px; margin: 0 auto;">
+                    <div style="padding: 2rem 0; border-bottom: 1px solid var(--border);">
+                        <strong style="display: block; color: var(--accent); font-size: 1.0625rem; margin-bottom: 0.75rem; font-family: 'Lora', serif;">Component system migration — pharmaceutical brand site (AEM).</strong>
+                        <p style="color: var(--text-secondary); margin: 0; line-height: 1.75;">Led the migration of a major brand site's pages onto a new, standardized AEM component system, rebuilding layouts with the new components and keeping content intact.</p>
+                    </div>
+                    <div style="padding: 2rem 0; border-bottom: 1px solid var(--border);">
+                        <strong style="display: block; color: var(--accent); font-size: 1.0625rem; margin-bottom: 0.75rem; font-family: 'Lora', serif;">20+ page site refresh (AEM).</strong>
+                        <p style="color: var(--text-secondary); margin: 0; line-height: 1.75;">Delivered a refresh of more than twenty pages for a pharmaceutical brand, including analytics tagging, SEO updates, Content and Experience Fragments, and custom CSS/JS.</p>
+                    </div>
+                    <div style="padding: 2rem 0; border-bottom: 1px solid var(--border);">
+                        <strong style="display: block; color: var(--accent); font-size: 1.0625rem; margin-bottom: 0.75rem; font-family: 'Lora', serif;">CMS migration with zero data loss.</strong>
+                        <p style="color: var(--text-secondary); margin: 0; line-height: 1.75;">Helped move a travel company's content from TeamSite to AEM without losing data.</p>
+                    </div>
+                    <div style="padding: 2rem 0; border-bottom: 1px solid var(--border);">
+                        <strong style="display: block; color: var(--accent); font-size: 1.0625rem; margin-bottom: 0.75rem; font-family: 'Lora', serif;">XSS vulnerability fix protecting 1M+ users.</strong>
+                        <p style="color: var(--text-secondary); margin: 0; line-height: 1.75;">Identified and fixed a cross-site scripting vulnerability in a high-traffic e-commerce storefront.</p>
+                    </div>
+                    <div style="padding: 2rem 0; border-bottom: 1px solid var(--border);">
+                        <strong style="display: block; color: var(--accent); font-size: 1.0625rem; margin-bottom: 0.75rem; font-family: 'Lora', serif;">Performance optimization — ~90% reduction in logging calls.</strong>
+                        <p style="color: var(--text-secondary); margin: 0; line-height: 1.75;">Reduced unnecessary Splunk logging calls by approximately 90%, improving application performance and reducing costs.</p>
+                    </div>
+                    <div style="padding: 2rem 0;">
+                        <strong style="display: block; color: var(--accent); font-size: 1.0625rem; margin-bottom: 0.75rem; font-family: 'Lora', serif;">Storefront front-end & accessibility (React/TypeScript).</strong>
+                        <p style="color: var(--text-secondary); margin: 0; line-height: 1.75;">Built reusable components and feature-flag-driven theming infrastructure for a large e-commerce storefront redesign, and fixed accessibility issues across keyboard navigation, focus management and screen-reader support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- TODO: TESTIMONIALS SECTION - Add client testimonials here -->
+        <section class="section-warm" style="padding: 4rem 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What clients say</h2>
+                </div>
+                <div style="text-align: center; color: var(--text-secondary); font-style: italic; padding: 3rem 0;">
+                    Testimonials coming soon
                 </div>
             </div>
         </section>
@@ -804,7 +894,7 @@
                     <h2>About Michael</h2>
                 </div>
                 <div class="about-content">
-                    <p>I'm a front-end engineer (React, TypeScript) with deep Adobe Experience Manager experience from both sides of the platform. I spent five years as an AEM Content Manager at Travel + Leisure before moving into engineering there as a Software Engineer II, where I built components, helped migrate the site from TeamSite to AEM, and worked on performance, security and testing.</p>
+                    <p>I'm a front-end engineer (React, TypeScript) with <strong>8+ years of Adobe Experience Manager experience</strong> from both sides of the platform. I spent five years as an AEM Content Manager at Travel + Leisure before moving into engineering there as a Software Engineer II, where I built components, helped migrate the site from TeamSite to AEM, and worked on performance, security and testing.</p>
                     <p>Since then I've worked on front-end and accessibility for a major tech retailer's storefront, and I currently work as an AEM Content Author and Digital Experience Specialist for a global pharmaceutical company through a consulting partner — leading component migrations and multi-page brand refreshes.</p>
                     <p>That mix is the point: I understand what authors and marketers need day to day, and I can build it properly in code. I'm based in Newark, NJ.</p>
                     <div class="skills-box">

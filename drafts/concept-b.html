@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept B: Bold Modern Dark | Speranza Web Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --accent: #00F5FF;
+            --accent-dim: #00B8C4;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B4BCD0;
+            --text-muted: #8B93A9;
+            --bg-dark: #0A0E1A;
+            --bg-darker: #050810;
+            --bg-card: #131825;
+            --bg-elevated: #1A2030;
+            --border: #252D3F;
+            --focus: #00F5FF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-dark);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -999px;
+            left: -999px;
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .skip-link:focus {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            outline: 3px solid var(--focus);
+            outline-offset: 3px;
+        }
+        
+        :focus-visible {
+            outline: 3px solid var(--focus);
+            outline-offset: 3px;
+        }
+        
+        nav {
+            background: rgba(10, 14, 26, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover { color: var(--accent); }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+        
+        .btn-accent:hover {
+            background: #00DCEC;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 245, 255, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(0, 245, 255, 0.1);
+        }
+        
+        main { padding-top: 0; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .container-narrow {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 7rem 0;
+        }
+        
+        .section-elevated {
+            background: var(--bg-darker);
+        }
+        
+        .hero {
+            padding: 10rem 0 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 245, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+        
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 850px;
+            margin: 0 auto 3rem;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .microcopy {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        .credibility {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .credibility p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .credibility small {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .problem-card {
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .problem-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        
+        .problem-card strong {
+            display: block;
+            color: var(--accent);
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-dim));
+        }
+        
+        .service-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-card .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .service-card h4 {
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+        
+        .service-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .service-card ul li {
+            color: var(--text-secondary);
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .service-card ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .pricing-box {
+            background: var(--bg-dark);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .pricing-box h4 {
+            color: var(--accent);
+            margin: 0 0 1.5rem;
+            font-size: 1.375rem;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .price-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .price-item span:first-child {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .price-current {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-right: 0.75rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        
+        .founding-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            color: var(--bg-dark);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .guarantee {
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 2rem 0;
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .note {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .process-step {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -1.25rem;
+            left: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: var(--accent);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .process-step h3 {
+            margin: 0.5rem 0 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .process-step p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+            font-size: 1.0625rem;
+        }
+        
+        .skills-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skills-box strong {
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-size: 1.125rem;
+        }
+        
+        .skills-box p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-item p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1.0625rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent);
+            outline: 3px solid rgba(0, 245, 255, 0.2);
+            outline-offset: 0;
+            background: var(--bg-elevated);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 10rem;
+        }
+        
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        .contact-alternatives {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .contact-alternatives a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-alternatives a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: var(--bg-darker);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-tagline {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-legal {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .lead { font-size: 1.125rem; }
+            .cta-group { flex-direction: column; }
+            .nav-links { display: none; }
+            section { padding: 5rem 0; }
+            .hero { padding: 6rem 0 5rem; }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    
+    <nav role="navigation" aria-label="Main">
+        <div class="nav-container">
+            <a href="#" class="logo">SWS</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#process">Process</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="btn btn-accent">Book a call</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <div class="eyebrow">AEM · MARKETING TECH · ACCESSIBILITY</div>
+                <h1>AEM development and accessibility for marketing teams.</h1>
+                <p class="lead">I'm Michael Speranza, a front-end engineer who has also spent years on the authoring side of Adobe Experience Manager. I build and fix components, clean up authoring, run migrations, wire up SEO and analytics, and make sure your pages work for everyone — keyboard and screen-reader users included.</p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-accent">Book a free 30-minute call</a>
+                    <a href="#services" class="btn btn-outline">See services & pricing</a>
+                </div>
+                <p class="microcopy">Based in Newark, NJ · Working with teams remotely across the U.S.</p>
+            </div>
+        </section>
+        
+        <div class="credibility">
+            <p><strong>Experience includes work for Novo Nordisk, Microsoft Store and Travel + Leisure.</strong></p>
+            <small>Past and current roles were held through employers and consulting partners. Company names are for identification only and do not imply endorsement.</small>
+        </div>
+        
+        <section id="problems">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sound familiar?</h2>
+                </div>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <strong>"Every small page change needs a developer ticket."</strong>
+                        <p>Components weren't built with authors in mind, so simple updates take weeks.</p>
+                    </div>
+                    <div class="problem-card">
+                        <strong>"Our AEM site has drifted."</strong>
+                        <p>Old components, duplicate templates, one-off CSS and fragments nobody remembers creating.</p>
+                    </div>
+                    <div class="problem-card">
+                        <strong>"We're migrating (or should be)."</strong>
+                        <p>Moving content between systems — or onto a new component library — without breaking pages or losing data.</p>
+                    </div>
+                    <div class="problem-card">
+                        <strong>"We're not sure our site is accessible."</strong>
+                        <p>Legal, brand or procurement is asking about WCAG, and nobody has checked keyboard or screen-reader use.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services" class="section-elevated">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Two ways to work together</h2>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>AEM Development & Support</h3>
+                        <p class="subtitle">For marketing and digital teams running Adobe Experience Manager who need an extra pair of hands that speaks both developer and author.</p>
+                        
+                        <h4>What I can take on:</h4>
+                        <ul>
+                            <li>New and updated components (HTL, Sling Models, dialogs, policies) and editable templates</li>
+                            <li>Content Fragments and Experience Fragments — models, variations, reuse</li>
+                            <li>Authoring cleanup: consolidating components, fixing templates, simplifying dialogs, author documentation</li>
+                            <li>Migrations: moving pages onto a new component system, or content from another CMS into AEM</li>
+                            <li>Page builds and refreshes, including custom CSS/JS where the design system falls short</li>
+                            <li>SEO and analytics setup: metadata, headings, alt text, structured data, data-layer/analytics tagging</li>
+                        </ul>
+                        
+                        <div class="founding-badge">
+                            ⭐ Founding-client rates for my first 3 clients
+                        </div>
+                        
+                        <div class="pricing-box">
+                            <h4>How it's priced:</h4>
+                            <div class="price-item">
+                                <span>20-hour block</span>
+                                <span>
+                                    <span class="price-current">$2,400</span>
+                                    <span class="price-original">$2,700</span>
+                                </span>
+                            </div>
+                            <div class="price-item">
+                                <span>Monthly retainer (40 hrs)</span>
+                                <span>
+                                    <span class="price-current">$4,200</span>
+                                    <span class="price-original">$4,800</span>
+                                </span>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 1.5rem;">Fixed-scope projects (migrations, page refreshes) quoted after a short discovery call.</p>
+                        </div>
+                        
+                        <div class="guarantee">
+                            ✓ If the first 5 hours don't meet your bar, you don't pay for them.
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-accent" style="display: block; text-align: center; margin-top: 2rem;">Talk about your AEM site →</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Accessibility Audit & Remediation</h3>
+                        <p class="subtitle">For teams who need to know where their site stands against WCAG — and what to fix first.</p>
+                        
+                        <h4>The audit (fixed price):</h4>
+                        <ul>
+                            <li>Review of your key pages/templates (e.g., home, a product or campaign page, a form, a content page)</li>
+                            <li>Automated scans plus manual testing: keyboard-only navigation, focus order and visibility, screen-reader checks (VoiceOver/NVDA), color contrast, headings and landmarks, forms, images and alt text, motion</li>
+                            <li>A prioritized report mapped to WCAG 2.2 AA: what's broken, who it affects, how to fix it, with screenshots and code-level guidance your developers (or authors) can act on</li>
+                            <li>A 45-minute walkthrough call with your team</li>
+                        </ul>
+                        
+                        <div class="founding-badge">
+                            ⭐ Founding-client rates for my first 3 clients
+                        </div>
+                        
+                        <div class="pricing-box">
+                            <h4>Pricing:</h4>
+                            <div class="price-item">
+                                <span>Audit (up to 5 pages)</span>
+                                <span>
+                                    <span class="price-current">$1,250</span>
+                                    <span class="price-original">$1,500</span>
+                                </span>
+                            </div>
+                            <div class="price-item">
+                                <span>Remediation (starting)</span>
+                                <span>
+                                    <span class="price-current">$2,200</span>
+                                    <span class="price-original">$2,500</span>
+                                </span>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 1.5rem;">Larger scopes quoted. Optional fix package: I fix the issues directly and re-test.</p>
+                        </div>
+                        
+                        <div class="guarantee">
+                            ✓ If the first 5 hours don't meet your bar, you don't pay for them.
+                        </div>
+                        
+                        <div class="note">
+                            <strong>Honest note:</strong> An audit shows where you stand and how to improve; it isn't a legal certification. I don't provide legal advice.
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-accent" style="display: block; text-align: center; margin-top: 2rem;">Get an accessibility audit →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How it works</h2>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Free 30-minute call</h3>
+                        <p>Tell me about your site, your team and what's stuck. I'll tell you honestly whether I'm the right fit.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Clear scope and price</h3>
+                        <p>Within a few business days you get a short written proposal: what I'll do, what it costs, and when it'll be done. No surprises.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Work, report, hand off</h3>
+                        <p>I do the work in your environment, keep you updated, and finish with documentation or a report your team can keep using.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="section-elevated">
+            <div class="container-narrow">
+                <div class="section-header">
+                    <h2>About Michael</h2>
+                </div>
+                <div class="about-content">
+                    <p>I'm a front-end engineer (React, TypeScript) with deep Adobe Experience Manager experience from both sides of the platform. I spent five years as an AEM Content Manager at Travel + Leisure before moving into engineering there as a Software Engineer II, where I built components, helped migrate the site from TeamSite to AEM, and worked on performance, security and testing.</p>
+                    <p>Since then I've worked on front-end and accessibility for a major tech retailer's storefront, and I currently work as an AEM Content Author and Digital Experience Specialist for a global pharmaceutical company through a consulting partner — leading component migrations and multi-page brand refreshes.</p>
+                    <p>That mix is the point: I understand what authors and marketers need day to day, and I can build it properly in code. I'm based in Newark, NJ.</p>
+                    <div class="skills-box">
+                        <strong>Skills:</strong>
+                        <p>AEM (HTL, Sling Models, components, editable templates, Content & Experience Fragments, DAM, authoring) · React · TypeScript · JavaScript · HTML/CSS/Sass · WCAG 2.2 / accessibility testing · SEO & analytics implementation · Jest · Git · Maven</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Do you work with AEM as a Cloud Service and older AEM 6.5 sites?</h3>
+                        <p>Yes. I've worked in enterprise AEM environments on both authoring and development. If your setup has something unusual, we'll cover it on the intro call.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do I need to give you access to our systems?</h3>
+                        <p>For development and fix work, yes — typically an AEM author account and repository access under your usual security process. An accessibility audit can often start with just your public URLs (or a staging login).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Will an audit make us "WCAG compliant"?</h3>
+                        <p>An audit tells you exactly where you stand against WCAG 2.2 AA and what to fix, in priority order. Compliance comes from fixing the issues and keeping them fixed — which I can help with. It's not a legal certification or legal advice.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can you work alongside our agency or in-house developers?</h3>
+                        <p>Yes. I'm used to working inside larger teams and fitting into existing Git workflows, sprint processes and code review.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How quickly can you start?</h3>
+                        <p>Usually within one to two weeks of an agreed scope. Retainer clients get priority turnaround.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section-elevated">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Let's talk about your site</h2>
+                </div>
+                <div class="contact-form">
+                    <p class="contact-intro">Tell me a little about your site and what you need. I reply within one business day.</p>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Work email</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" autocomplete="organization">
+                        </div>
+                        <div class="form-group">
+                            <label for="need">What do you need?</label>
+                            <select id="need" name="need" required>
+                                <option value="">Select one</option>
+                                <option value="aem">AEM development & support</option>
+                                <option value="accessibility">Accessibility audit</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <button type="submit" class="btn btn-accent" style="width: 100%;">Send message</button>
+                    </form>
+                    <div class="contact-alternatives">
+                        <p>Prefer to pick a time? <a href="https://cal.com/YOUR_LINK">Book a free 30-minute call</a></p>
+                        <p>Or email <a href="mailto:speranzawebservices@gmail.com">speranzawebservices@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer role="contentinfo">
+        <div class="container">
+            <p class="footer-tagline">Speranza Web Services · AEM development & accessibility for marketing teams · Newark, NJ</p>
+            <div class="footer-links">
+                <a href="mailto:speranzawebservices@gmail.com">speranzawebservices@gmail.com</a>
+                <a href="https://github.com/mikespe" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="footer-legal">© <span id="year">2026</span> Speranza Web Services. Company names are used for identification only and do not imply endorsement.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

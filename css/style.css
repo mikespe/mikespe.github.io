@@ -138,6 +138,15 @@ nav {
   color: var(--accent);
 }
 
+.nav-links .btn-accent,
+.nav-links .btn-accent:link,
+.nav-links .btn-accent:visited,
+.nav-links .btn-accent:hover,
+.nav-links .btn-accent:focus,
+.nav-links .btn-accent:active {
+  color: white !important;
+}
+
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -269,7 +278,7 @@ section {
 
 .problem-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 960px;
   margin: 0 auto;
@@ -398,14 +407,17 @@ section {
 }
 
 .first-engagement-badge {
-  background: var(--accent);
-  color: white;
-  padding: 0.875rem 1.25rem;
-  border-radius: 8px;
-  font-size: 0.9375rem;
+  display: inline-block;
+  background: var(--bg-warm);
+  color: var(--accent);
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin: 1.75rem 0;
-  text-align: center;
+  margin: 1.5rem 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--accent);
 }
 
 .guarantee {
@@ -702,6 +714,10 @@ footer {
 
   .nav-links {
     display: none;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
   }
 
   section {

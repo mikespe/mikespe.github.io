@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /drafts/
+
+Sitemap: https://speranzawebservices.com/sitemap.xml

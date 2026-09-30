@@ -869,8 +869,24 @@ footer {
   }
   
   /* Service cards mobile fix */
+  .service-grid {
+    max-width: none;
+  }
+  
   .service-card {
     padding: 2rem 1.25rem;
+  }
+  
+  /* Price items stack on mobile */
+  .price-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+  }
+  
+  .price-item span:first-child {
+    font-size: 0.9375rem;
   }
   
   .pricing-box {
@@ -955,6 +971,10 @@ footer {
   
   .container-narrow {
     padding: 0 1rem;
+  }
+  
+  .service-grid {
+    max-width: none;
   }
   
   .service-card {

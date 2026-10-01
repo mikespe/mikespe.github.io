@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-    "@axe-core/cli": "^4.13.0",
-    "lighthouse": "^12.8.2",
-    "pa11y": "^10.0.0"
-  }
-}

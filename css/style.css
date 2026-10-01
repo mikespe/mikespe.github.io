@@ -43,6 +43,7 @@ h1 {
   line-height: 1.2;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 h2 {
@@ -52,12 +53,14 @@ h2 {
   margin-bottom: 1rem;
   text-align: center;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 h3 {
   font-size: 1.625rem;
   font-weight: 700;
   line-height: 1.4;
+  text-wrap: balance;
 }
 
 h4 {
@@ -222,11 +225,14 @@ nav {
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  font-family: inherit;
+  line-height: inherit;
 }
 
 .btn-accent {
   background: var(--accent);
   color: white;
+  border: 2px solid transparent;
 }
 
 .btn-accent:hover,
@@ -377,7 +383,7 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  max-width: 900px;
+  max-width: 840px;
   margin: 0 auto;
 }
 
@@ -541,7 +547,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -791,6 +797,7 @@ footer {
     flex-direction: column;
     gap: 0;
     padding: 0;
+    align-items: stretch;
   }
   
   .nav-links.open {
@@ -802,6 +809,7 @@ footer {
     border-bottom: 1px solid var(--border);
     font-size: 1rem;
     color: var(--text-primary);
+    text-align: left;
   }
   
   .nav-links a:last-child {
@@ -813,6 +821,7 @@ footer {
     padding: 0.875rem 1.5rem;
     text-align: center;
     border-radius: 6px;
+    width: auto;
   }
   
   /* Mobile containers and gutters */
@@ -830,6 +839,11 @@ footer {
   
   .hero {
     padding: 4.5rem 0 3.5rem;
+  }
+  
+  /* Section headers */
+  .section-header {
+    margin-bottom: 2.5rem;
   }
   
   /* Mobile typography */
@@ -877,6 +891,14 @@ footer {
     padding: 2rem 1.25rem;
   }
   
+  /* Pricing box mobile */
+  /* Pricing box mobile */
+  .pricing-box {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.25rem;
+  }
+  
   /* Price items stack on mobile */
   .price-item {
     flex-direction: column;
@@ -887,11 +909,6 @@ footer {
   
   .price-item span:first-child {
     font-size: 0.9375rem;
-  }
-  
-  .pricing-box {
-    margin-left: 0;
-    margin-right: 0;
   }
   
   .guarantee {

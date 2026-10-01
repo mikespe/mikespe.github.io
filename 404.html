@@ -25,13 +25,17 @@
     <nav role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <a href="/" class="logo">Speranza Web Services</a>
-            <div class="nav-links">
+            <button class="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+                <span class="menu-icon" aria-hidden="true"></span>
+                <span class="menu-text">Menu</span>
+            </button>
+            <div class="nav-links" id="mobile-menu">
                 <a href="/#services">Services</a>
                 <a href="/#work">Work</a>
                 <a href="/#process">Process</a>
                 <a href="/#about">About</a>
                 <a href="/#faq">FAQ</a>
-                <a href="/#contact" class="btn btn-accent">Book a call</a>
+                <a href="/#contact" class="btn btn-accent">Get in touch</a>
             </div>
         </div>
     </nav>
@@ -52,19 +56,60 @@
     
     <footer role="contentinfo">
         <div class="container">
-            <p class="footer-tagline">Speranza Web Services · AEM development & accessibility for marketing teams · Newark, NJ</p>
+            <p class="footer-tagline">Speranza Web Services · AEM development & accessibility audits · Newark, NJ</p>
             <div class="footer-links">
                 <a href="mailto:speranzawebservices@gmail.com">speranzawebservices@gmail.com</a>
                 <a href="https://github.com/mikespe" target="_blank" rel="noopener" aria-label="GitHub profile (opens in new tab)">GitHub</a>
                 <a href="https://linkedin.com/in/michael-speranza" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in new tab)">LinkedIn</a>
             </div>
-            <p class="footer-legal">© <span id="year">2026</span> Speranza Web Services. Company names are used for identification only and do not imply endorsement.</p>
+            <p class="footer-legal">© <span id="year">2026</span> Speranza Web Services. Company names are for identification only.</p>
         </div>
     </footer>
     
     <script>
         // Update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const menuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        
+        function toggleMenu() {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('open');
+        }
+        
+        function closeMenu() {
+            menuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('open');
+        }
+        
+        // Toggle menu on button click
+        menuButton.addEventListener('click', toggleMenu);
+        
+        // Close menu on link click
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMenu();
+                menuButton.focus();
+            }
+        });
+        
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('open') && 
+                !mobileMenu.contains(e.target) && 
+                !menuButton.contains(e.target)) {
+                closeMenu();
+            }
+        });
     </script>
 </body>
 </html>

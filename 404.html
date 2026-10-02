@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found | Speranza Web Services</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo">Speranza Web Services</a>
+            <button class="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+                <span class="menu-icon" aria-hidden="true"></span>
+                <span class="menu-text">Menu</span>
+            </button>
+            <div class="nav-links" id="mobile-menu">
+                <a href="/#services">Services</a>
+                <a href="/#work">Work</a>
+                <a href="/#process">Process</a>
+                <a href="/#about">About</a>
+                <a href="/#faq">FAQ</a>
+                <a href="/#contact" class="btn btn-accent">Get in touch</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main id="main">
+        <section class="hero" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+            <div class="container" style="text-align: center;">
+                <div class="eyebrow" style="color: var(--accent);">Error 404</div>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Page not found</h1>
+                <p class="lead" style="margin-bottom: 2.5rem;">The page you're looking for doesn't exist or has moved.</p>
+                <div class="cta-group">
+                    <a href="/" class="btn btn-accent">Go home</a>
+                    <a href="/#contact" class="btn btn-outline">Get in touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer role="contentinfo">
+        <div class="container">
+            <p class="footer-tagline">Speranza Web Services · AEM development & accessibility audits · Newark, NJ</p>
+            <div class="footer-links">
+                <a href="mailto:speranzawebservices@gmail.com">speranzawebservices@gmail.com</a>
+                <a href="https://github.com/mikespe" target="_blank" rel="noopener" aria-label="GitHub profile (opens in new tab)">GitHub</a>
+                <a href="https://linkedin.com/in/michael-speranza" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in new tab)">LinkedIn</a>
+            </div>
+            <p class="footer-legal">© <span id="year">2026</span> Speranza Web Services. Company names are for identification only.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const menuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        
+        function toggleMenu() {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('open');
+        }
+        
+        function closeMenu() {
+            menuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('open');
+        }
+        
+        // Toggle menu on button click
+        menuButton.addEventListener('click', toggleMenu);
+        
+        // Close menu on link click
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMenu();
+                menuButton.focus();
+            }
+        });
+        
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('open') && 
+                !mobileMenu.contains(e.target) && 
+                !menuButton.contains(e.target)) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>

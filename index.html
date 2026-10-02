@@ -1,379 +1,475 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Speranza Web Services - Premium Web Development & Digital Solutions">
+    
+    <!-- SEO Meta Tags -->
+    <title>AEM Developer & Accessibility Audits | Speranza Web Services</title>
+    <meta name="description" content="Adobe Experience Manager (AEM) development and WCAG 2.2 AA accessibility audits for marketing teams. Components, migrations, authoring cleanup. Newark, NJ.">
     <meta name="author" content="Michael Speranza">
-    <title>Speranza Web Services | Digital Excellence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#8B5CF6',
-                        dark: '#0F172A',
-                        'dark-lighter': '#1E293B',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
-        }
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://speranzawebservices.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://speranzawebservices.com/">
+    <meta property="og:title" content="Speranza Web Services - AEM & Accessibility for Marketing Teams">
+    <meta property="og:description" content="8+ years on both sides of Adobe Experience Manager, authoring and development. Components, migrations, authoring cleanup and WCAG accessibility audits.">
+    <meta property="og:image" content="https://speranzawebservices.com/imgs/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speranza Web Services - AEM & Accessibility for Marketing Teams">
+    <meta name="twitter:description" content="8+ years on both sides of Adobe Experience Manager, authoring and development. Components, migrations, authoring cleanup and WCAG accessibility audits.">
+    <meta name="twitter:image" content="https://speranzawebservices.com/imgs/og-image.png">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Speranza Web Services",
+      "url": "https://speranzawebservices.com/",
+      "email": "speranzawebservices@gmail.com",
+      "areaServed": "US",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Newark",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Michael Speranza",
+        "jobTitle": "AEM & Front-End Engineer"
+      },
+      "knowsAbout": [
+        "Adobe Experience Manager",
+        "Web accessibility",
+        "WCAG",
+        "React",
+        "TypeScript",
+        "Front-end development"
+      ],
+      "description": "AEM development and accessibility consulting for marketing teams"
+    }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, #3B82F6, #8B5CF6, #EC4899);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
 </head>
-
-<body class="bg-dark text-white overflow-x-hidden">
-
-    <!-- Background Effects -->
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <div
-            class="absolute top-0 left-1/4 w-96 h-96 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
-        </div>
-        <div
-            class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
-        </div>
-        <div
-            class="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000">
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass border-b-0 border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <span class="text-xl sm:text-2xl font-bold gradient-text">SWS</span>
-                </div>
-                <div class="flex items-baseline space-x-2 sm:space-x-4">
-                    <a href="#services"
-                        class="hover:text-primary px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors">Services</a>
-                    <a href="#projects"
-                        class="hover:text-primary px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors">Projects</a>
-                    <a href="#contact"
-                        class="bg-primary hover:bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-lg shadow-blue-500/30">Contact</a>
-                </div>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo">Speranza Web Services</a>
+            <button class="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+                <span class="menu-icon" aria-hidden="true"></span>
+                <span class="menu-text">Menu</span>
+            </button>
+            <div class="nav-links" id="mobile-menu">
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#process">Process</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="btn btn-accent">Get in touch</a>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-16">
-        <div class="text-center px-4 max-w-4xl mx-auto">
-            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-fade-in-up">
-                Building the <br class="hidden sm:block">
-                <span class="gradient-text">Digital Future</span>
-            </h1>
-            <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in-up"
-                style="animation-delay: 0.1s;">
-                Premium web development and digital solutions tailored to elevate your brand.
-                We turn complex problems into elegant, high-performance experiences.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up"
-                style="animation-delay: 0.2s;">
-                <a href="#projects"
-                    class="group relative px-8 py-4 bg-white text-dark font-bold rounded-full overflow-hidden transition-all hover:scale-105">
-                    <span class="relative z-10">View Work</span>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-10 transition-opacity">
-                    </div>
-                </a>
-                <a href="mailto:speranzawebservices@gmail.com"
-                    class="px-8 py-4 glass text-white font-bold rounded-full hover:bg-white/10 transition-all hover:scale-105 border border-white/20">
-                    Get in Touch
-                </a>
+    
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <div class="eyebrow">AEM development · Accessibility audits</div>
+                <h1>AEM sites your authors can run and every visitor can use.</h1>
+                <p class="lead">I'm Michael Speranza. I've spent 8+ years on both sides of Adobe Experience Manager: authoring and development. I build components, run migrations and fix accessibility so your team ships faster.</p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-accent">Book a free 30-minute call</a>
+                    <a href="#services" class="btn btn-outline">See services and pricing</a>
+                </div>
+                <p class="microcopy">Newark, NJ · Remote across the U.S.</p>
             </div>
+        </section>
+        
+        <div class="credibility">
+            <p><strong>Experience includes work for Novo Nordisk, Microsoft Store and Travel + Leisure.</strong></p>
+            <small>Roles held through employers and consulting partners. Names are for identification only; no endorsement implied.</small>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16"><span class="gradient-text">Services &
-                    Expertise</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div
-                    class="glass p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 group">
-                    <div
-                        class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Frontend Engineering</h3>
-                    <p class="text-gray-400 mb-4">Specializing in building scalable, high-performance web applications.
-                    </p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• React & TypeScript</li>
-                        <li>• HTML5, CSS3, SASS</li>
-                        <li>• Modern JavaScript (ES6+)</li>
-                        <li>• Responsive Design</li>
-                    </ul>
+        
+        <section id="problems">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sound familiar?</h2>
                 </div>
-                <!-- Service 2 -->
-                <div
-                    class="glass p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 group">
-                    <div
-                        class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                            </path>
-                        </svg>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <strong>"Every small change needs a developer ticket."</strong>
+                        <p>Components weren't built for authors, so simple updates take weeks.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">CMS & Architecture</h3>
-                    <p class="text-gray-400 mb-4">Enterprise-grade content management and system architecture.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• AEM Cloud & OSGI</li>
-                        <li>• Node.js & GraphQL</li>
-                        <li>• RESTful APIs</li>
-                        <li>• SQL Databases</li>
-                    </ul>
-                </div>
-                <!-- Service 3 -->
-                <div
-                    class="glass p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 group">
-                    <div
-                        class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-6 text-pink-500 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+                    <div class="problem-card">
+                        <strong>"Our AEM site has drifted."</strong>
+                        <p>Old components, duplicate templates, one-off CSS and fragments nobody owns.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Quality & Optimization</h3>
-                    <p class="text-gray-400 mb-4">Delivering robust, secure, and optimized code.</p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li>• Testing (Jest, Postman)</li>
-                        <li>• CI/CD Pipelines (Git, Maven)</li>
-                        <li>• Performance Tuning</li>
-                        <li>• Prompt Engineering</li>
-                    </ul>
+                    <div class="problem-card">
+                        <strong>"We need to migrate."</strong>
+                        <p>New CMS or component library. No broken pages, no lost content.</p>
+                    </div>
+                    <div class="problem-card">
+                        <strong>"Is our site even accessible?"</strong>
+                        <p>Legal or procurement is asking about WCAG. Nobody has tested with a keyboard or screen reader.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 bg-dark-lighter/50">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Featured <span
-                    class="gradient-text">Work</span></h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 1. Club Wyndham -->
-                <a href="https://clubwyndham.com" target="_blank"
-                    class="group relative rounded-2xl overflow-hidden glass aspect-video hover:shadow-2xl hover:shadow-blue-400/20 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-90 z-10">
-                    </div>
-                    <img src="imgs/clubwyndham.png" alt="Club Wyndham"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">Club Wyndham
-                        </h3>
-                        <p class="text-gray-300 text-sm mb-4">Enterprise-scale vacation ownership platform.</p>
-                        <span class="text-blue-400 text-sm font-bold flex items-center">Visit Site <svg
-                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg></span>
-                    </div>
-                </a>
-
-                <!-- 2. RecipeDB -->
-                <a href="https://recipedb.up.railway.app/" target="_blank"
-                    class="group relative rounded-2xl overflow-hidden glass aspect-video hover:shadow-2xl hover:shadow-primary/20 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-90 z-10">
-                    </div>
-                    <img src="imgs/recipedb.png" alt="RecipeDB"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">RecipeDB</h3>
-                        <p class="text-gray-300 text-sm mb-4">Full-stack recipe management with AI-powered extraction.
-                        </p>
-                        <span class="text-primary text-sm font-bold flex items-center">View Project <svg
-                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg></span>
-                    </div>
-                </a>
-
-                <!-- 3. WorldMark -->
-                <a href="https://worldmark.wyndhamdestinations.com" target="_blank"
-                    class="group relative rounded-2xl overflow-hidden glass aspect-video hover:shadow-2xl hover:shadow-teal-400/20 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-90 z-10">
-                    </div>
-                    <img src="imgs/worldmark.png" alt="WorldMark"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-teal-400 transition-colors">WorldMark</h3>
-                        <p class="text-gray-300 text-sm mb-4">High-traffic travel portal with complex booking flows.</p>
-                        <span class="text-teal-400 text-sm font-bold flex items-center">Visit Site <svg
-                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg></span>
-                    </div>
-                </a>
-
-                <!-- 4. Travel + Leisure GO -->
-                <a href="https://go.travelandleisure.com/" target="_blank"
-                    class="group relative rounded-2xl overflow-hidden glass aspect-video hover:shadow-2xl hover:shadow-amber-400/20 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-90 z-10">
-                    </div>
-                    <img src="imgs/tlgo.png" alt="Travel + Leisure GO"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Travel +
-                            Leisure GO</h3>
-                        <p class="text-gray-300 text-sm mb-4">Premium travel membership platform serving millions of
-                            users.</p>
-                        <span class="text-amber-400 text-sm font-bold flex items-center">Visit Site <svg
-                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg></span>
-                    </div>
-                </a>
-
-                <!-- 5. Fridge List -->
-                <a href="https://mikespe.github.io/fridge/" target="_blank"
-                    class="group relative rounded-2xl overflow-hidden glass aspect-video hover:shadow-2xl hover:shadow-emerald-400/20 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-90 z-10">
-                    </div>
-                    <img src="imgs/foodinv.PNG" alt="Fridge List"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">Fridge List
-                        </h3>
-                        <p class="text-gray-300 text-sm mb-4">Food inventory tracker using LocalStorage API.</p>
-                        <span class="text-emerald-400 text-sm font-bold flex items-center">View Project <svg
-                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg></span>
-                    </div>
-                </a>
-
-                <!-- 6. CalCalc 2.0 -->
-                <a href="https://github.com/mikespe/calcalc2.0" target="_blank"
-                    class="group relative rounded-2xl overflow-hidden glass aspect-video hover:shadow-2xl hover:shadow-secondary/20 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-90 z-10">
-                    </div>
-                    <img src="imgs/calcalc.png" alt="CalCalc 2.0"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-secondary transition-colors">CalCalc 2.0
-                        </h3>
-                        <p class="text-gray-300 text-sm mb-4">Advanced calorie and macro tracking application.</p>
-                        <span class="text-secondary text-sm font-bold flex items-center">View on GitHub <svg
-                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg></span>
-                    </div>
-                </a>
-
-                <!-- 7. FroggerJS -->
-                <a href="https://mikespe.github.io/FroggerJS" target="_blank"
-                    class="group relative rounded-2xl overflow-hidden glass aspect-video hover:shadow-2xl hover:shadow-green-500/20 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-90 z-10">
-                    </div>
-                    <img src="imgs/froggyjs.PNG" alt="FroggerJS"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-green-500 transition-colors">FroggerJS</h3>
-                        <p class="text-gray-300 text-sm mb-4">Classic arcade game recreated with Canvas API.</p>
-                        <span class="text-green-500 text-sm font-bold flex items-center">Play Game <svg
-                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg></span>
-                    </div>
-                </a>
+        </section>
+        
+        <section id="services" class="section-warm">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Services and pricing</h2>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <h3>AEM development and support</h3>
+                        <p class="subtitle">For Adobe Experience Manager teams that need a developer who thinks like an author.</p>
+                        
+                        <h4>What I take on</h4>
+                        <ul>
+                            <li>Components (HTL, Sling Models, dialogs, policies) and editable templates</li>
+                            <li>Content and Experience Fragments: models, variations, reuse</li>
+                            <li>Authoring cleanup: consolidated components, simpler dialogs, author docs</li>
+                            <li>Migrations to a new component system or from another CMS into AEM</li>
+                            <li>Page builds and refreshes, including custom CSS/JS</li>
+                            <li>SEO and analytics: metadata, structured data, data-layer tagging</li>
+                        </ul>
+                        
+                        <span class="first-engagement-badge">First Engagement Rate</span>
+                        
+                        <div class="pricing-box">
+                            <h4>Pricing:</h4>
+                            <div class="price-item">
+                                <span>20-hour block</span>
+                                <span>
+                                    <span class="price-current">$2,400</span>
+                                    <span class="price-original">$2,700</span>
+                                </span>
+                            </div>
+                            <div class="price-item">
+                                <span>Monthly retainer (20 hrs)</span>
+                                <span>
+                                    <span class="price-current">$2,200</span>
+                                    <span class="price-original">$2,500</span>
+                                </span>
+                            </div>
+                            <div class="price-item">
+                                <span>Monthly retainer (40 hrs)</span>
+                                <span>
+                                    <span class="price-current">$4,200</span>
+                                    <span class="price-original">$4,800</span>
+                                </span>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: 1rem; font-style: italic;">First-engagement rates apply to your first project with me.</p>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.5rem;">Fixed-scope projects (migrations, refreshes) quoted after a short discovery call.</p>
+                        </div>
+                        
+                        <div class="guarantee">
+                            ✓ If the first 5 hours don't meet your bar, you don't pay for them.
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-accent" style="display: block; text-align: center; margin-top: 1.75rem;">Plan your AEM work →</a>
+                    </article>
+                    
+                    <article class="service-card">
+                        <h3>Accessibility audit and remediation</h3>
+                        <p class="subtitle">Know where your site stands against WCAG 2.2 AA, and what to fix first.</p>
+                        
+                        <h4>The audit (fixed price)</h4>
+                        <ul>
+                            <li>Up to 5 key pages or templates (home, campaign page, form, etc.)</li>
+                            <li>Automated scans plus manual testing: keyboard, focus, screen readers, contrast, headings, forms, alt text, motion</li>
+                            <li>A prioritized WCAG 2.2 AA report: what's broken, who it affects and how to fix it, with screenshots and code-level guidance</li>
+                            <li>A 45-minute walkthrough with your team</li>
+                        </ul>
+                        
+                        <span class="first-engagement-badge">First Engagement Rate</span>
+                        
+                        <div class="pricing-box">
+                            <h4>Pricing</h4>
+                            <div class="price-item">
+                                <span>Audit (up to 5 pages)</span>
+                                <span>
+                                    <span class="price-current">$1,250</span>
+                                    <span class="price-original">$1,500</span>
+                                </span>
+                            </div>
+                            <div class="price-item">
+                                <span>Remediation package</span>
+                                <span>
+                                    <span class="price-current">From $2,200</span>
+                                    <span class="price-original">$2,500</span>
+                                </span>
+                            </div>
+                            <div class="price-item">
+                                <span>Audit + remediation bundle</span>
+                                <span>
+                                    <span class="price-current">$3,400</span>
+                                    <span class="price-original">$3,750</span>
+                                </span>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: 1rem; font-style: italic;">First-engagement rates apply to your first project with me.</p>
+                            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.5rem;">Remediation: up to 20 hours of fixes plus retest; extra hours $125/hr. Larger scopes quoted.</p>
+                        </div>
+                        
+                        <div class="guarantee">
+                            ✓ If the first 5 hours of remediation don't meet your bar, you don't pay for them.
+                        </div>
+                        
+                        <div class="note">
+                            <strong>Honest note:</strong> An audit shows where you stand and what to fix. It isn't a legal certification or legal advice.
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-accent" style="display: block; text-align: center; margin-top: 1.75rem;">Request an accessibility audit →</a>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">Ready to start a project?</h2>
-            <div class="flex flex-col items-center justify-center space-y-4 mb-12">
-                <a href="mailto:mikesperanza34@gmail.com"
-                    class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30">
-                    mikesperanza34@gmail.com
-                </a>
-                <a href="tel:2018207354" class="text-xl text-gray-300 hover:text-white transition-colors">
-                    201-820-7354
-                </a>
-                <p class="text-gray-400">Newark, NJ</p>
+        </section>
+        
+        <section id="work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recent work</h2>
+                    <p>Selected projects from enterprise roles. Client details kept general.</p>
+                </div>
+                <div class="work-list">
+                    <div class="work-item">
+                        <strong>AEM component-system migration (pharma brand)</strong>
+                        <p>Contributed to migrating a major pharma brand site onto a standardized AEM component library, content intact.</p>
+                    </div>
+                    <div class="work-item">
+                        <strong>20+ page brand refresh (AEM, pharma)</strong>
+                        <p>Delivered a refresh of more than twenty pages for a pharmaceutical brand: SEO, Content and Experience Fragments, DAM, custom CSS/JS.</p>
+                    </div>
+                    <div class="work-item">
+                        <strong>TeamSite-to-AEM migration, zero data loss</strong>
+                        <p>Helped move a travel media brand's content into AEM without losing data.</p>
+                    </div>
+                    <div class="work-item">
+                        <strong>XSS fix protecting 1M+ users</strong>
+                        <p>Found and patched a cross-site scripting flaw in the search bar of a high-traffic travel booking site.</p>
+                    </div>
+                    <div class="work-item">
+                        <strong>~90% fewer logging calls</strong>
+                        <p>Cut redundant Splunk logging calls by ~90%, improving performance and lowering costs.</p>
+                    </div>
+                    <div class="work-item">
+                        <strong>Microsoft Store front-end and accessibility (React/TypeScript)</strong>
+                        <p>Built a major new site theme behind a feature flag, plus reusable components and keyboard, focus and screen-reader fixes.</p>
+                    </div>
+                </div>
             </div>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://github.com/mikespe" target="_blank"
-                    class="text-gray-400 hover:text-white transition-colors">
-                    <span class="sr-only">GitHub</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd"
-                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
+        </section>
+        
+        <!-- Testimonials section - TODO: Add real client testimonials -->
+        <!-- <section class="section-warm" style="padding: 4rem 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What clients say</h2>
+                </div>
+                <div style="text-align: center; color: var(--text-secondary); font-style: italic; padding: 3rem 0;">
+                    Testimonials coming soon
+                </div>
             </div>
-            <p class="text-gray-500 text-sm">
-                &copy; 2025 Speranza Web Services. All rights reserved.
-            </p>
+        </section> -->
+        
+        <section id="process" class="section-warm">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How it works</h2>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Free 30-minute call</h3>
+                        <p>Tell me what's stuck. I'll say honestly whether I'm the right fit.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Scope and price</h3>
+                        <p>Within a few business days: what I'll do, what it costs, when it's done.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Delivery and handoff</h3>
+                        <p>I work in your environment, keep you posted, and leave documentation your team can use.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <div class="container-narrow">
+                <div class="section-header">
+                    <h2>About Michael</h2>
+                </div>
+                <div class="about-content">
+                    <p>I'm a front-end engineer (React, TypeScript) with <strong>8+ years in Adobe Experience Manager</strong>. I spent five years as an AEM content manager at Travel + Leisure, then moved into engineering there as a Software Engineer II, building components and helping migrate the site from TeamSite to AEM.</p>
+                    <p>Since then I've worked on front-end and accessibility for the Microsoft Store. Most recently, through a consulting partner, I've been contributing to AEM component migrations and multi-page brand refreshes for a global pharmaceutical company.</p>
+                    <p>That's the advantage: I know what authors and marketers need, and I can build it properly.</p>
+                    <div class="skills-box">
+                        <strong>Skills</strong>
+                        <p>AEM (HTL, Sling Models, components, editable templates, Content & Experience Fragments, DAM, authoring) · React · TypeScript · JavaScript · HTML/CSS/Sass · WCAG 2.2 / accessibility testing · SEO & analytics implementation · Jest · Git · Maven</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="section-warm">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Common questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Do you work with AEM as a Cloud Service and older AEM 6.5 sites?</h3>
+                        <p>Yes, I've worked hands-on with both. If your setup is unusual, we'll cover it on the intro call.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do I need to give you access to our systems?</h3>
+                        <p>For development and fix work, yes: typically an AEM author account and repository access under your usual security process. An accessibility audit can often start with just your public URLs (or a staging login).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Will an audit make us "WCAG compliant"?</h3>
+                        <p>An audit tells you exactly where you stand against WCAG 2.2 AA and what to fix, in priority order. Compliance comes from fixing the issues and keeping them fixed, which I can help with. It's not a legal certification or legal advice.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can you work alongside our agency or in-house developers?</h3>
+                        <p>Yes. I'm used to working inside larger teams and fitting into existing Git workflows, sprint processes and code review.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How quickly can you start?</h3>
+                        <p>Usually within one to two weeks of an agreed scope. Retainer clients get priority turnaround.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Tell me about your site</h2>
+                </div>
+                <div class="contact-form">
+                    <p class="contact-intro">A few lines is enough. I reply within one business day.</p>
+                    <!-- Form falls back to mailto until you add a service like Formspree or Web3Forms.
+                         To use Formspree: action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                         To use Web3Forms: action="https://api.web3forms.com/submit" method="POST" and add hidden access_key field -->
+                    <form action="mailto:speranzawebservices@gmail.com" method="POST" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Name <span aria-label="required">*</span></label>
+                            <input type="text" id="name" name="name" required autocomplete="name" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Work email <span aria-label="required">*</span></label>
+                            <input type="email" id="email" name="email" required autocomplete="email" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" autocomplete="organization">
+                        </div>
+                        <div class="form-group">
+                            <label for="need">What do you need? <span aria-label="required">*</span></label>
+                            <select id="need" name="need" required aria-required="true">
+                                <option value="">Select one</option>
+                                <option value="aem">AEM development & support</option>
+                                <option value="accessibility">Accessibility audit or remediation</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message <span aria-label="required">*</span></label>
+                            <textarea id="message" name="message" required aria-required="true"></textarea>
+                        </div>
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <button type="submit" class="btn btn-accent">Send message</button>
+                    </form>
+                    <div class="contact-alternatives">
+                        <p>Prefer email? <a href="mailto:speranzawebservices@gmail.com">speranzawebservices@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer role="contentinfo">
+        <div class="container">
+            <p class="footer-tagline">Speranza Web Services · AEM development & accessibility audits · Newark, NJ</p>
+            <div class="footer-links">
+                <a href="mailto:speranzawebservices@gmail.com">speranzawebservices@gmail.com</a>
+                <a href="https://github.com/mikespe" target="_blank" rel="noopener" aria-label="GitHub profile (opens in new tab)">GitHub</a>
+                <a href="https://linkedin.com/in/michael-speranza" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in new tab)">LinkedIn</a>
+            </div>
+            <p class="footer-legal">© <span id="year">2026</span> Speranza Web Services. Company names are for identification only.</p>
         </div>
     </footer>
-
+    
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const menuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        
+        function toggleMenu() {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('open');
+        }
+        
+        function closeMenu() {
+            menuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('open');
+        }
+        
+        // Toggle menu on button click
+        menuButton.addEventListener('click', toggleMenu);
+        
+        // Close menu on link click
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMenu();
+                menuButton.focus();
+            }
+        });
+        
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('open') && 
+                !mobileMenu.contains(e.target) && 
+                !menuButton.contains(e.target)) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
-
 </html>
